@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0099e6</color>
+    <color name="colorPrimaryDark">#006699</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="yellow">#ff9900</color>
+    <color name="blue">#006699</color>
+    <color name="bubble_back_color">#F3F3F3</color>
+</resources>

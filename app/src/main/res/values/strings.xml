@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TYFT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register">Register Now</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="singup">Sign Up</string>
+    <string name="singout">Sign Out</string>
+    <string name="edit">Edit Profile</string>
+    <string name="login">Login</string>
+    <string name="already">Already Registered?</string>
+    <string name="not_register">Not Registered Yet?</string>
+    <string name="login_account">Sign In</string>
+    <string name="forgot">Forget Password</string>
+    <string name="profile">User Profile</string>
+    <string name="location">Location</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+    <string name="text">TextField</string>
+    <string name="see">your location</string>
+    <string name="truck_owner">truck owners</string>
+    <string name="tyft">TYFT</string>
+    <string name="name_of_truck">Name of your truck</string>
+    <string name="schedule">Set your timing</string>
+    <string name="setting">Setting</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+
+    <string name="verify">Verify</string>
+    <string name="verify_text">We have sent you the code on the email you provided, please verify yourself.</string>
+    <string name="resend_code_text">Resend Confirmation Code in </string>
+    <string name="skip">Skip</string>
+    <string name="we_will_send_an_email_to_this_id">We will send an email to this ID, ensure its your personal Email ID</string>
+    <string name="please_change_your_password_here_make_sure_the_password_is_easy_to_remember">Please change your password here, make sure the password is easy to remember</string>
+</resources>

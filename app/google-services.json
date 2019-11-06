@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "507731693529",
+    "firebase_url": "https://tyft-app.firebaseio.com",
+    "project_id": "tyft-app",
+    "storage_bucket": "tyft-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507731693529:android:99fbe51e14e9fce0",
+        "android_client_info": {
+          "package_name": "com.squaredevelopers.tyft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507731693529-navdgjbibpgeqc27c95mro1dm33r4877.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.squaredevelopers.tyft",
+            "certificate_hash": "8a49158720a2ebae8039b7b3d30cebe77f89f196"
+          }
+        },
+        {
+          "client_id": "507731693529-4tt1033ciadn8qsfmouv3sope4b1euju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFZYiTcTsLq3HjxL0SumG74MCjbV7Q0mA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507731693529-4tt1033ciadn8qsfmouv3sope4b1euju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
