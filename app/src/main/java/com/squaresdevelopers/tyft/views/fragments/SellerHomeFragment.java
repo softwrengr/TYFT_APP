@@ -1,6 +1,7 @@
 package com.squaresdevelopers.tyft.views.fragments;
 
 import android.app.Dialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -30,7 +31,6 @@ import java.util.Locale;
 
 public class SellerHomeFragment extends Fragment {
 
-    private int sellerID;
     private GetLocation getLocation;
 
     private SellerViewModel sellerViewModel;
@@ -43,7 +43,6 @@ public class SellerHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_seller_home, container, false);
-        sellerID = GeneralUtils.getSellerId(getActivity());
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
         loadLocale();
@@ -128,7 +127,7 @@ public class SellerHomeFragment extends Fragment {
         tvCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setLocale("es-rUS");
+                setLocale("es");
                 dialog.dismiss();
 
             }
@@ -137,7 +136,7 @@ public class SellerHomeFragment extends Fragment {
     }
 
     private void setLocale(String language) {
-        Locale locale = new Locale("es-rUS");
+        Locale locale = new Locale("es");
         Locale.setDefault(locale);
         Resources res = getActivity().getResources();
         Configuration config = new Configuration(res.getConfiguration());

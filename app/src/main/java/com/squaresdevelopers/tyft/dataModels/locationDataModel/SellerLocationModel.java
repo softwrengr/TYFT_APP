@@ -1,92 +1,63 @@
 package com.squaresdevelopers.tyft.dataModels.locationDataModel;
 
 public class SellerLocationModel {
-    public String latitude;
-    public String longitude;
-    public String id;
-    public String checkLocation;
 
-    public String name,image1,image2,email;
+    public String strID,date,startTime,endTime,strLatitude,strLongitude;
 
-    public SellerLocationModel(String name,
-                               String email,
-                               String image1,
-                               String image2,
-                               String latitude,
-                               String longitude,
-                               String id,
-                               String checkLocation) {
-        this.name = name;
-        this.email = email;
-        this.image1 = image1;
-        this.image2 = image2;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.id = id;
-        this.checkLocation = checkLocation;
+    public SellerLocationModel(String strID,String date, String startTime, String endTime, String strLatitude, String strLongitude) {
+        this.strID = strID;
+        this.date = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.strLatitude = strLatitude;
+        this.strLongitude = strLongitude;
     }
 
-    public String getName() {
-        return name;
+    public String getStrID() {
+        return strID;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStrID(String strID) {
+        this.strID = strID;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDate() {
+        return date;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getImage1() {
-        return image1;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setImage1(String image1) {
-        this.image1 = image1;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public String getImage2() {
-        return image2;
+    public String getEndTime() {
+        return endTime;
     }
 
-    public void setImage2(String image2) {
-        this.image2 = image2;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public String getStrLatitude() {
+        return strLatitude;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setStrLatitude(String strLatitude) {
+        this.strLatitude = strLatitude;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public String getStrLongitude() {
+        return strLongitude;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getCheckLocation() {
-        return checkLocation;
-    }
-
-    public void setCheckLocation(String checkLocation) {
-        this.checkLocation = checkLocation;
+    public void setStrLongitude(String strLongitude) {
+        this.strLongitude = strLongitude;
     }
 }

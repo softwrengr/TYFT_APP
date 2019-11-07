@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TYFT</string>
+
+    <string name="register">Regístrate ahora</string>
+    <string name="name">Nombre</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="singup">Regístrate</string>
+    <string name="singout">Desconectar</string>
+    <string name="edit">Editar perfil</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="already">Already Registered?</string>
+    <string name="not_register">¿Ya registrado?</string>
+    <string name="login_account">Registrarse</string>
+    <string name="forgot">Contraseña olvidada</string>
+    <string name="profile">Perfil del usuario</string>
+    <string name="location">Ubicación</string>
+    <string name="save">Salvar</string>
+    <string name="back">atrás</string>
+    <string name="text">Campo de texto</string>
+    <string name="see">Tu ubicación</string>
+    <string name="truck_owner">Propietarios de camiones</string>
+    <string name="tyft">TYFT</string>
+    <string name="name_of_truck">Nombre de tu camioneta</string>
+    <string name="schedule">Establece tu tiempo</string>
+    <string name="setting">Ajuste</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
+
+    <string name="verify">Verificar</string>
+    <string name="verify_text">Le hemos enviado el código en el correo electrónico que proporcionó, verifíquese.</string>
+    <string name="resend_code_text">Reenviar código de confirmación en</string>
+    <string name="skip">Omitir</string>
+    <string name="we_will_send_an_email_to_this_id">Le enviaremos un correo electrónico a esta ID, asegúrese de que sea su ID de correo electrónico personal</string>
+    <string name="please_change_your_password_here_make_sure_the_password_is_easy_to_remember">Cambie su contraseña aquí, asegúrese de que la contraseña sea fácil de recordar.</string>
+
+</resources>

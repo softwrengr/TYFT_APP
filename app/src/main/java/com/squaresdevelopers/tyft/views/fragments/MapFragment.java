@@ -9,6 +9,8 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AlertDialog;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,7 @@ import com.squaresdevelopers.tyft.utilities.NetworkUtils;
 
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -100,11 +103,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         showSellerLocation();
 
-        try {
-            checkUserTime();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         return view;
     }
@@ -145,12 +143,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                         GetSellerLocation model = postSnapshot.getValue(GetSellerLocation.class);
 
-                        String checkLocation = postSnapshot.child("checkLocation").getValue().toString();
-                        String id = postSnapshot.child("id").getValue().toString();
-                        String lat = postSnapshot.child("latitude").getValue().toString();
-                        String lng = postSnapshot.child("longitude").getValue().toString();
+                        String id = model.getStrID();
+                        String date = model.getDate();
+                        String startTime = model.getStartTime();
+                        String endTime = model.getEndTime();
+                        String lat = model.getStrLatitude();
+                        String lng = model.getStrLongitude();
 
-                        showMarker(lat, lng, id, checkLocation);
+                        try {
+                            calculateTiming(id,date,startTime,endTime,lat,lng);
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -160,6 +164,43 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
             }
         });
+
+    }
+
+    private void calculateTiming(String id, String date, String startTime, String endTime, String latitude, String longitude) throws ParseException {
+
+        SimpleDateFormat dfDate = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+
+        Date c = Calendar.getInstance().getTime();
+        String formattedDate = dfDate.format(c);
+
+        try {
+            //date matched
+            if (dfDate.parse(date).equals(dfDate.parse(formattedDate))) {
+                //checking whether the time match or not
+                Date date_from = formatter.parse(startTime);
+                Date date_to = formatter.parse(endTime);
+
+                String currentTime = formatter.format(Calendar.getInstance().getTime());
+                Date dateNow = formatter.parse(currentTime);
+
+                //if time matched
+                if (date_from.before(dateNow) && date_to.after(dateNow)) {
+                    showMarker(latitude, longitude, id, "1");
+                }
+                else {
+                    showMarker(latitude, longitude, id, "0");
+                }
+            }
+            //date not match
+            else {
+                showMarker(latitude, longitude, id, "0");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -304,30 +345,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return zoomLevel;
     }
 
-    private void checkUserTime() throws ParseException {
-        String from = "20:10:00";
-        String to = "23:39:30";
-
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        Date date_from = formatter.parse(from);
-        Date date_to = formatter.parse(to);
-
-        String currentTime = formatter.format(Calendar.getInstance().getTime());
-
-        Date dateNow = formatter.parse(currentTime);
-
-        Toast.makeText(getActivity(), currentTime, Toast.LENGTH_SHORT).show();
-
-        if (date_from.before(dateNow) && date_to.after(dateNow)) {
-            Toast.makeText(getActivity(), "yes time is between", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(getActivity(), "no time is between", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     private void snackBar(String msg) {
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG);
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("d-MM-yyyy");
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss aa");
+
+        String formattedDate = dateFormatter.format(c.getTime());
+        String formattedTime = timeFormatter.format(c.getTime());
     }
 
 

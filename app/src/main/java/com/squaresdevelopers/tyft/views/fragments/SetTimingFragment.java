@@ -1,24 +1,26 @@
 package com.squaresdevelopers.tyft.views.fragments;
 
 import android.app.TimePickerDialog;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.savvi.rangedatepicker.CalendarPickerView;
 import com.squaresdevelopers.tyft.R;
+import com.squaresdevelopers.tyft.dataModels.locationDataModel.SellerLocationModel;
+import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 
 import java.sql.Time;
 import java.text.Format;
@@ -48,12 +50,18 @@ public class SetTimingFragment extends Fragment {
     @BindView(R.id.tv_done)
     TextView tvDone;
 
+    private DatabaseReference databaseReference;
+    private int sellerID;
+    private String strDate, strStartTime, strEndTime, AM_PM;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_set_timing, container, false);
-        ButterKnife.bind(this,view);
+        view = inflater.inflate(R.layout.fragment_set_timing, container, false);
+        ButterKnife.bind(this, view);
+        FirebaseApp.initializeApp(getActivity());
+        sellerID = GeneralUtils.getSellerId(getActivity());
 
 
         final Calendar nextYear = Calendar.getInstance();
@@ -102,7 +110,7 @@ public class SetTimingFragment extends Fragment {
         tvDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
+                saveSellerTiming();
             }
         });
         return view;
@@ -121,8 +129,8 @@ public class SetTimingFragment extends Fragment {
         cal.set(Calendar.MONTH, month);
         String month_name = month_date.format(calendar.getTime());
 
-        String currentDate = String.valueOf(day) + "-" + String.valueOf(month+1) + "-" + String.valueOf(year);
-        Toast.makeText(getActivity(), currentDate, Toast.LENGTH_SHORT).show();
+        strDate = String.valueOf(day) + "-" + String.valueOf(month + 1) + "-" + String.valueOf(year);
+
 
     }
 
@@ -139,15 +147,27 @@ public class SetTimingFragment extends Fragment {
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
-                            Time tme = new Time(view.getHour(),view.getHour(),0);
-                            Format formatter;
-                            formatter = new SimpleDateFormat("h:mm a");
-
-                            if(check){
-                                tvStartTime.setText(formatter.format(tme));
+                            if (hourOfDay >= 0 && hourOfDay < 12) {
+                                AM_PM = "AM";
+                            } else {
+                                if (hourOfDay == 12) {
+                                    AM_PM = "PM";
+                                } else {
+                                    hourOfDay = hourOfDay - 12;
+                                    AM_PM = "PM";
+                                }
                             }
-                            else {
-                                tvEndTime.setText(formatter.format(tme));
+
+                            Time tme = new Time(view.getHour(), view.getMinute(), 0);
+                            Format formatter;
+                            formatter = new SimpleDateFormat("HH:mm:ss");
+
+                            if (check) {
+                                strStartTime = formatter.format(tme);
+                                tvStartTime.setText(strStartTime + " " + AM_PM);
+                            } else {
+                                strEndTime = formatter.format(tme);
+                                tvEndTime.setText(strEndTime+  " " + AM_PM);
                             }
 
                         }
@@ -155,4 +175,27 @@ public class SetTimingFragment extends Fragment {
                 }, mHour, mMinute, false);
         timePickerDialog.show();
     }
+
+    private void saveSellerTiming() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID));
+
+        SellerLocationModel model = new SellerLocationModel(
+                String.valueOf(sellerID),
+                strDate,
+                strStartTime,
+                strEndTime,
+                GeneralUtils.getUserLatitude(getActivity()),
+                GeneralUtils.getUserLongitude(getActivity()));
+
+        databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getActivity(), "Time set successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
 }

@@ -14,307 +14,307 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/curve">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="50sp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10sp"
-            android:layout_marginLeft="25dp"
-            android:src="@drawable/logo" />
-
-        <LinearLayout
-            android:id="@+id/login_layout"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_marginLeft="20sp"
-            android:layout_marginTop="15sp"
-            android:layout_marginRight="20sp"
-            android:padding="10dp"
-            android:background="@drawable/round_layout"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:background="@drawable/curve">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/iv_edit"
-                    android:layout_width="30sp"
-                    android:layout_height="30dp"
-                    android:src="@mipmap/edit"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:tint="@color/colorPrimaryDark"
-                    android:layout_marginRight="10dp"/>
-
-                <TextView
-                    android:id="@+id/account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/poppin_light"
-                    android:text="User Detail"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="50sp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10sp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:id="@+id/login_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="20sp"
+                android:padding="10dp"
+                android:background="@drawable/round_layout"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/iv_edit"
+                        android:layout_width="30sp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/edit"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:tint="@color/colorPrimaryDark"
+                        android:layout_marginRight="10dp"/>
+
+                    <TextView
+                        android:id="@+id/account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/poppin_light"
+                        android:text="User Detail"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_seller_one"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_seller_one"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile"
+                        app:civ_border_color="#EEEEEE"
+                        app:civ_border_width="4dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_seller_two"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/profile"
+                        android:layout_marginLeft="10dp"
+                        app:civ_border_color="#EEEEEE"
+                        app:civ_border_width="4dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/profile"
-                    app:civ_border_color="#EEEEEE"
-                    app:civ_border_width="4dp" />
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_seller_two"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/email"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5sp"
+                        android:layout_gravity="center"
+                        android:text="@{SellerViewModel.email}"
+                        android:hint="@string/email" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/profile"
-                    android:layout_marginLeft="10dp"
-                    app:civ_border_color="#EEEEEE"
-                    app:civ_border_width="4dp" />
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_button_white"
+                    android:padding="8dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/name_tag"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5sp"
+                        android:layout_gravity="center"
+                        android:text="@{SellerViewModel.name}"
+                        android:hint="Truck" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/layout_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/pin"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/see" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/layout_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/event"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp" />
+
+                    <TextView
+                        android:id="@+id/switch_txtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/schedule"
+                        android:layout_toLeftOf="@+id/simpleSwitch" />
+                </LinearLayout>
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="8dp"
+                android:layout_below="@id/login_layout"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_button_white"
-                android:orientation="horizontal">
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
+                android:padding="5dp"
+                android:background="@drawable/round_layout"
+                android:orientation="vertical">
 
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/email"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp" />
-
-                <TextView
+                <LinearLayout
+                    android:id="@+id/layout_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"
                     android:layout_gravity="center"
-                    android:text="@{SellerViewModel.email}"
-                    android:hint="@string/email" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_button_white"
-                android:padding="8dp"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/name_tag"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp"/>
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
 
 
-                <TextView
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/setting"
+                        android:tint="@color/colorPrimaryDark"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:fontFamily="@font/regular"
+                        android:text="@string/setting"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_signout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5sp"
                     android:layout_gravity="center"
-                    android:text="@{SellerViewModel.name}"
-                    android:hint="Truck" />
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/round_button_white"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/logout"
+                        android:tint="@color/colorPrimaryDark"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="15dp"  />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginRight="5dp"
+                        android:fontFamily="@font/regular"
+                        android:text="@string/singout"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
-
-
-            <LinearLayout
-                android:id="@+id/layout_map"
+            <ProgressBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_button_white"
-                android:orientation="horizontal">
+                android:indeterminateTint="@color/blue"
+                app:visibility="@{SellerViewModel.progressBar}"
+                android:layout_centerInParent="true"/>
 
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/pin"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp"  />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/see" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/layout_set"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="5dp"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_button_white"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/event"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp" />
-
-                <TextView
-                    android:id="@+id/switch_txtView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="@string/schedule"
-                    android:layout_toLeftOf="@+id/simpleSwitch" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/login_layout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20sp"
-            android:layout_marginRight="20sp"
-            android:padding="5dp"
-            android:background="@drawable/round_layout"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/layout_setting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/round_button_white"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/setting"
-                    android:tint="@color/colorPrimaryDark"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp"  />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:fontFamily="@font/regular"
-                    android:text="@string/setting"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_signout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/round_button_white"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/logout"
-                    android:tint="@color/colorPrimaryDark"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="15dp"  />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:fontFamily="@font/regular"
-                    android:text="@string/singout"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:indeterminateTint="@color/blue"
-            app:visibility="@{SellerViewModel.progressBar}"
-            android:layout_centerInParent="true"/>
-
-    </RelativeLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 </layout>

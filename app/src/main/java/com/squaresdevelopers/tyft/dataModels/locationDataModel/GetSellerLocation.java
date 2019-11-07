@@ -2,37 +2,53 @@ package com.squaresdevelopers.tyft.dataModels.locationDataModel;
 
 public class GetSellerLocation {
 
-    String id,checkLocation,latitude,longitude;
+    public String strID,date,startTime,endTime,strLatitude,strLongitude;
 
-    public String getId() {
-        return id;
+    public String getStrID() {
+        return strID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStrID(String strID) {
+        this.strID = strID;
     }
 
-    public String getCheckLocation() {
-        return checkLocation;
+    public String getDate() {
+        return date;
     }
 
-    public void setCheckLocation(String checkLocation) {
-        this.checkLocation = checkLocation;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getLatitude() {
-        return latitude;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public String getLongitude() {
-        return longitude;
+    public String getEndTime() {
+        return endTime;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getStrLatitude() {
+        return strLatitude;
+    }
+
+    public void setStrLatitude(String strLatitude) {
+        this.strLatitude = strLatitude;
+    }
+
+    public String getStrLongitude() {
+        return strLongitude;
+    }
+
+    public void setStrLongitude(String strLongitude) {
+        this.strLongitude = strLongitude;
     }
 }
