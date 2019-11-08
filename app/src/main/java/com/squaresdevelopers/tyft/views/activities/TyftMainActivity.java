@@ -45,9 +45,9 @@ public class TyftMainActivity extends AppCompatActivity {
                 case R.id.map:
                     GeneralUtils.connectTyftFragment(TyftMainActivity.this,new com.squaresdevelopers.tyft.views.fragments.MapFragment());
                     return true;
-                case R.id.users:
-                    GeneralUtils.connectTyftFragment(TyftMainActivity.this,new TyftUsersFragment());
-                    return true;
+//                case R.id.users:
+//                    GeneralUtils.connectTyftFragment(TyftMainActivity.this,new TyftUsersFragment());
+//                    return true;
                 case R.id.logout:
                     finish();
                     GeneralUtils.putStringValueInEditor(TyftMainActivity.this,"type","user2");

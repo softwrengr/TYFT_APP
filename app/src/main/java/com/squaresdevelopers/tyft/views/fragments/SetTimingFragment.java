@@ -1,8 +1,11 @@
 package com.squaresdevelopers.tyft.views.fragments;
 
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,10 +24,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.savvi.rangedatepicker.CalendarPickerView;
 import com.squaresdevelopers.tyft.R;
 import com.squaresdevelopers.tyft.dataModels.locationDataModel.SellerLocationModel;
+import com.squaresdevelopers.tyft.utilities.AlertUtils;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 
 import java.sql.Time;
 import java.text.Format;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,8 +38,10 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class SetTimingFragment extends Fragment {
+    AlertDialog alertDialog;
     View view;
     int mHour, mMinute, mSecond;
 
@@ -60,6 +68,9 @@ public class SetTimingFragment extends Fragment {
     private int sellerID;
     private String strDate, strStartTime, strEndTime, AM_PM;
 
+    SimpleDateFormat formatter,simpleDateFormat,currentDate;
+    private boolean check = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,9 +79,52 @@ public class SetTimingFragment extends Fragment {
         ButterKnife.bind(this, view);
         FirebaseApp.initializeApp(getActivity());
         sellerID = GeneralUtils.getSellerId(getActivity());
-       // showUserTime();
+        showUserTime();
+
+        //setting time format
+        formatter = new SimpleDateFormat("HH:mm:ss");
+        currentDate = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date c = Calendar.getInstance().getTime();
+        strDate = currentDate.format(c);
+        showCalendar();
 
 
+        layoutStartTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHourPicker(true);
+            }
+        });
+
+        layoutEndTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHourPicker(false);
+            }
+        });
+
+        tvDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(validate()){
+                    alertDialog = AlertUtils.createProgressDialog(getActivity());
+                    alertDialog.show();
+                    saveSellerTiming();
+                }
+            }
+        });
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
+        return view;
+    }
+
+    private void showCalendar() {
         final Calendar nextYear = Calendar.getInstance();
         nextYear.add(Calendar.YEAR, 20);
         final Calendar lastYear = Calendar.getInstance();
@@ -99,35 +153,6 @@ public class SetTimingFragment extends Fragment {
 
             }
         });
-
-        layoutStartTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showHourPicker(true);
-            }
-        });
-
-        layoutEndTime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showHourPicker(false);
-            }
-        });
-
-        tvDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveSellerTiming();
-            }
-        });
-
-        tvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
-        return view;
     }
 
     private void formattedDate(Date date) {
@@ -136,12 +161,7 @@ public class SetTimingFragment extends Fragment {
         int day = cal.get(Calendar.DAY_OF_MONTH);
         int month = cal.get(Calendar.MONTH);
         int year = cal.get(Calendar.YEAR);
-
-
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat month_date = new SimpleDateFormat("MMMM");
         cal.set(Calendar.MONTH, month);
-        String month_name = month_date.format(calendar.getTime());
 
         strDate = String.valueOf(day) + "-" + String.valueOf(month + 1) + "-" + String.valueOf(year);
 
@@ -173,8 +193,6 @@ public class SetTimingFragment extends Fragment {
                             }
 
                             Time tme = new Time(view.getHour(), view.getMinute(), 0);
-                            Format formatter;
-                            formatter = new SimpleDateFormat("HH:mm:ss");
 
                             if (check) {
                                 strStartTime = formatter.format(tme);
@@ -193,9 +211,7 @@ public class SetTimingFragment extends Fragment {
     }
 
     private void saveSellerTiming() {
-
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID));
-
         SellerLocationModel model = new SellerLocationModel(
                 String.valueOf(sellerID),
                 strDate,
@@ -207,9 +223,10 @@ public class SetTimingFragment extends Fragment {
         databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
+                alertDialog.dismiss();
                 GeneralUtils.putStringValueInEditor(getActivity(),"startTime",strStartTime + " " + AM_PM);
                 GeneralUtils.putStringValueInEditor(getActivity(),"endTime",strEndTime + " " + AM_PM);
-                Toast.makeText(getActivity(), "Timing updated successfully", Toast.LENGTH_SHORT).show();
+                showSweetDialog(SweetAlertDialog.SUCCESS_TYPE,"Your Time is updated successfully");
             }
         });
     }
@@ -217,6 +234,82 @@ public class SetTimingFragment extends Fragment {
     private void showUserTime(){
         tvShowStartTime.setText(GeneralUtils.getStartTime(getActivity()));
         tvShowEndTime.setText(GeneralUtils.getEndTime(getActivity()));
+    }
+
+
+    private void showSweetDialog(int dialodType,String message) {
+        SweetAlertDialog sweetAlertDialog = new SweetAlertDialog(getActivity(), dialodType);
+        sweetAlertDialog.setConfirmText("Go to Home")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismissWithAnimation();
+                        getActivity().onBackPressed();
+                    }
+                })
+                .setTitleText("Time Schedule")
+                .setContentText(message)
+                .setOnKeyListener(new DialogInterface.OnKeyListener() {
+                    @Override
+                    public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                        getActivity().finish();
+                        return false;
+                    }
+                });
+
+        sweetAlertDialog.setCancelButton("Cancel", new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+               sweetAlertDialog.dismissWithAnimation();
+            }
+        });
+        sweetAlertDialog.setCancelable(false);
+        sweetAlertDialog.show();
+    }
+
+    private boolean validate(){
+
+        if(strDate==null || strDate.isEmpty()){
+            Toast.makeText(getActivity(), "please select your date", Toast.LENGTH_SHORT).show();
+            check = false;
+        }
+        else {
+            check = true;
+        }
+
+        if(strStartTime==null || strStartTime.isEmpty()){
+            Toast.makeText(getActivity(), "please select your start time", Toast.LENGTH_SHORT).show();
+            check = false;
+        }
+        else {
+            check = true;
+        }
+
+        if(strEndTime==null || strEndTime.isEmpty()){
+            check = false;
+            Toast.makeText(getActivity(), "please select your end time", Toast.LENGTH_SHORT).show();
+        }
+        else  {
+            try {
+                Date date_from = formatter.parse(strStartTime);
+                Date date_to = formatter.parse(strEndTime);
+
+                if(date_from.equals(date_to)){
+                    check = false;
+                    showSweetDialog(SweetAlertDialog.ERROR_TYPE,
+                            "Your Start Time and End Time should not be similar");
+                }
+                else {
+                    check = true;
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return check;
     }
 
 }

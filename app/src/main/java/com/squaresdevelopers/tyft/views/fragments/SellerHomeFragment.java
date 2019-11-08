@@ -45,7 +45,7 @@ public class SellerHomeFragment extends Fragment {
                 inflater, R.layout.fragment_seller_home, container, false);
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
-        loadLocale();
+        //loadLocale();
         return binding.getRoot();
     }
 
@@ -103,7 +103,7 @@ public class SellerHomeFragment extends Fragment {
         binding.layoutSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectLanguages();
+              //  selectLanguages();
             }
         });
 

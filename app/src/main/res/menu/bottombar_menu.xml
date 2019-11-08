@@ -6,10 +6,10 @@
         android:icon="@drawable/map"
         android:title="Map"/>
 
-    <item
-        android:id="@+id/users"
-        android:icon="@drawable/list"
-        android:title="Users"/>
+<!--    <item-->
+<!--        android:id="@+id/users"-->
+<!--        android:icon="@drawable/list"-->
+<!--        android:title="Users"/>-->
 
     <item
         android:id="@+id/logout"
