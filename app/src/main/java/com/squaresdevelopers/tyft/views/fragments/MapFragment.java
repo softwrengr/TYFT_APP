@@ -178,7 +178,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         try {
             //date matched
             if (dfDate.parse(date).equals(dfDate.parse(formattedDate))) {
-                //checking whether the time match or not
                 Date date_from = formatter.parse(startTime);
                 Date date_to = formatter.parse(endTime);
 
@@ -187,15 +186,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
                 //if time matched
                 if (date_from.before(dateNow) && date_to.after(dateNow)) {
-                    showMarker(latitude, longitude, id, "1");
+                    showMarker(latitude, longitude, id, true);
                 }
                 else {
-                    showMarker(latitude, longitude, id, "0");
+                    showMarker(latitude, longitude, id, false);
                 }
             }
             //date not match
             else {
-                showMarker(latitude, longitude, id, "0");
+                showMarker(latitude, longitude, id, false);
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -204,21 +203,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
-    public void showMarker(String lat, String lng, final String id, String checkLocation) {
+    public void showMarker(String lat, String lng, final String id, boolean checkLocation) {
 
         Marker markerName;
         double latt = Double.parseDouble(lat);
         double lngg = Double.parseDouble(lng);
         apiLatLng = new LatLng(latt, lngg);
 
-        if (checkLocation.equals("0")) {
+        if (!checkLocation) {
             markerName = googleMap.addMarker(new MarkerOptions().position(apiLatLng).snippet(id));
             markerName.remove();
 
         }
-        if (checkLocation.equals("1")) {
+        if (checkLocation) {
             MarkerOptions marker = new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.truck));
-            //marker.title("user").infoWindowAnchor(0,0);
             marker.snippet(id);
             marker.position(apiLatLng);
             marker.visible(true);

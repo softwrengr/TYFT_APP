@@ -47,8 +47,14 @@ public class SetTimingFragment extends Fragment {
     TextView tvStartTime;
     @BindView(R.id.tv_end_time)
     TextView tvEndTime;
+    @BindView(R.id.tv_show_start)
+    TextView tvShowStartTime;
+    @BindView(R.id.tv_show_end)
+    TextView tvShowEndTime;
     @BindView(R.id.tv_done)
     TextView tvDone;
+    @BindView(R.id.tv_back)
+    TextView tvBack;
 
     private DatabaseReference databaseReference;
     private int sellerID;
@@ -62,6 +68,7 @@ public class SetTimingFragment extends Fragment {
         ButterKnife.bind(this, view);
         FirebaseApp.initializeApp(getActivity());
         sellerID = GeneralUtils.getSellerId(getActivity());
+       // showUserTime();
 
 
         final Calendar nextYear = Calendar.getInstance();
@@ -111,6 +118,13 @@ public class SetTimingFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 saveSellerTiming();
+            }
+        });
+
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
             }
         });
         return view;
@@ -165,9 +179,11 @@ public class SetTimingFragment extends Fragment {
                             if (check) {
                                 strStartTime = formatter.format(tme);
                                 tvStartTime.setText(strStartTime + " " + AM_PM);
+                                tvShowStartTime.setText(strStartTime + " " + AM_PM);
                             } else {
                                 strEndTime = formatter.format(tme);
                                 tvEndTime.setText(strEndTime+  " " + AM_PM);
+                                tvShowEndTime.setText(strEndTime+  " " + AM_PM);
                             }
 
                         }
@@ -191,11 +207,16 @@ public class SetTimingFragment extends Fragment {
         databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getActivity(), "Time set successfully", Toast.LENGTH_SHORT).show();
+                GeneralUtils.putStringValueInEditor(getActivity(),"startTime",strStartTime + " " + AM_PM);
+                GeneralUtils.putStringValueInEditor(getActivity(),"endTime",strEndTime + " " + AM_PM);
+                Toast.makeText(getActivity(), "Timing updated successfully", Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
-
+    private void showUserTime(){
+        tvShowStartTime.setText(GeneralUtils.getStartTime(getActivity()));
+        tvShowEndTime.setText(GeneralUtils.getEndTime(getActivity()));
     }
 
 }

@@ -101,6 +101,14 @@ public class GeneralUtils {
         return getSharedPreferences(context).getString("longitude","");
     }
 
+    public static String getStartTime(Context context){
+        return getSharedPreferences(context).getString("startTime","00:00:00");
+    }
+
+    public static String getEndTime(Context context){
+        return getSharedPreferences(context).getString("endTime","00:00:00");
+    }
+
 
     public static boolean isLogin(Context context){
         return getSharedPreferences(context).getBoolean("loggedIn",false);
