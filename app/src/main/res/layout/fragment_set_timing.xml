@@ -11,7 +11,7 @@
         android:id="@+id/tv_shedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Schedule your timing"
+        android:text="@string/schedule_timing"
         android:layout_marginLeft="30dp"
         android:textSize="18sp"
         android:layout_marginTop="20dp"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/calendar_picker"
                 android:layout_marginLeft="15dp"
-                android:text="Select start time"
+                android:text="@string/start_time"
                 android:gravity="center"
                 android:layout_gravity="center"/>
 
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/calendar_picker"
                 android:layout_marginLeft="15dp"
-                android:text="Select end time"
+                android:text="@string/end_time"
                 android:gravity="center"
                 android:layout_gravity="center"/>
 
@@ -118,7 +118,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/blue"
-            android:text="you will be visible to user"/>
+            android:text="@string/you_visible"/>
 
         <LinearLayout
             android:id="@+id/time_layout"
@@ -135,7 +135,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
-                android:text="From"/>
+                android:text="@string/from"/>
 
             <TextView
                 android:id="@+id/tv_show_start"
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:gravity="center"
-                android:text="To"/>
+                android:text="@string/to"/>
 
             <TextView
                 android:id="@+id/tv_show_end"
@@ -171,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/time_layout"
-            android:text="Back"
+            android:text="@string/back"
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
             android:textColor="@color/colorPrimaryDark"
@@ -186,7 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/time_layout"
             android:layout_alignParentRight="true"
-            android:text="Done"
+            android:text="@string/done"
             android:textStyle="bold"
             android:layout_marginRight="20dp"
             android:textColor="@color/colorPrimaryDark"

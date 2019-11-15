@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">TYFT</string>
 
+    <string name="welcome">Bienvenido a</string>
     <string name="register">Regístrate ahora</string>
     <string name="name">Nombre</string>
     <string name="email">Email</string>
@@ -15,6 +16,7 @@
     <string name="login_account">Registrarse</string>
     <string name="forgot">Contraseña olvidada</string>
     <string name="profile">Perfil del usuario</string>
+    <string name="user_detail">Detalle de usuario</string>
     <string name="location">Ubicación</string>
     <string name="save">Salvar</string>
     <string name="back">atrás</string>
@@ -24,6 +26,19 @@
     <string name="tyft">TYFT</string>
     <string name="name_of_truck">Nombre de tu camioneta</string>
     <string name="schedule">Establece tu tiempo</string>
+    <string name="schedule_timing">Programe su tiempo</string>
+    <string name="start_time">Seleccione hora de inicio</string>
+    <string name="end_time">Seleccionar hora de finalización</string>
+    <string name="you_visible">serás visible para el usuario</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="done">Hecho</string>
+    <string name="cancel">Cancelar</string>
+    <string name="change">cambio</string>
+    <string name="current_location">Ubicación actual</string>
+    <string name="this_is_your_location">Esta es tu ubicación actual</string>
+    <string name="no_internet">No hay conexión a internet disponible</string>
+
     <string name="setting">Ajuste</string>
     <string name="english">English</string>
     <string name="spanish">Spanish</string>

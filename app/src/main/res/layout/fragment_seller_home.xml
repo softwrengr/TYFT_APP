@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/poppin_light"
-                        android:text="User Detail"
+                        android:text="@string/user_detail"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="20sp"
                         android:textStyle="bold" />

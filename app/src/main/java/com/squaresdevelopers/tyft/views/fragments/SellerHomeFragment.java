@@ -5,15 +5,18 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -45,7 +48,7 @@ public class SellerHomeFragment extends Fragment {
                 inflater, R.layout.fragment_seller_home, container, false);
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
-        //loadLocale();
+        loadLocale();
         return binding.getRoot();
     }
 
@@ -103,7 +106,7 @@ public class SellerHomeFragment extends Fragment {
         binding.layoutSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  selectLanguages();
+                selectLanguages();
             }
         });
 
@@ -123,8 +126,9 @@ public class SellerHomeFragment extends Fragment {
         Dialog dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.language_layout);
         TextView tvCancel = dialog.findViewById(R.id.tv_cancel);
+        TextView tvDone = dialog.findViewById(R.id.tv_done);
 
-        tvCancel.setOnClickListener(new View.OnClickListener() {
+        tvDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setLocale("es");
@@ -132,16 +136,26 @@ public class SellerHomeFragment extends Fragment {
 
             }
         });
+
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
         dialog.show();
     }
 
     private void setLocale(String language) {
-        Locale locale = new Locale("es");
+
+        Locale locale = new Locale(language);
         Locale.setDefault(locale);
-        Resources res = getActivity().getResources();
-        Configuration config = new Configuration(res.getConfiguration());
-        res.updateConfiguration(config, res.getDisplayMetrics());
-        GeneralUtils.putStringValueInEditor(getActivity(), "language", "es-rUS");
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getActivity().getBaseContext().getResources().updateConfiguration(config,
+                getActivity().getBaseContext().getResources().getDisplayMetrics());
+
+        GeneralUtils.putStringValueInEditor(getActivity(), "language", language);
     }
 
     private void loadLocale() {

@@ -98,7 +98,7 @@ public class GeneralUtils {
     }
 
     public static String getLanguage(Context context){
-        return getSharedPreferences(context).getString("longitude","");
+        return getSharedPreferences(context).getString("language","");
     }
 
     public static String getStartTime(Context context){

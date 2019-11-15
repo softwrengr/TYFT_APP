@@ -49,7 +49,9 @@ public class SellerMapFragment extends Fragment implements OnMapReadyCallback {
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(getActivity(), "No Internet Connection Available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),
+                    ""+getResources().getString(R.string.no_internet),
+                    Toast.LENGTH_SHORT).show();
         }
         return view;
     }
@@ -59,7 +61,10 @@ public class SellerMapFragment extends Fragment implements OnMapReadyCallback {
         googleMap = map;
         BitmapDescriptor icon = BitmapDescriptorFactory.defaultMarker();
         LatLng latLng = new LatLng(lat, lng);
-        googleMap.addMarker(new MarkerOptions().position(latLng).title("Current Location").snippet("This is your current location")).setIcon(icon);
+        googleMap.addMarker(new MarkerOptions().position(latLng)
+                .title(getResources().getString(R.string.current_location))
+                .snippet(getResources().getString(R.string.this_is_your_location)))
+                .setIcon(icon);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 15);
         googleMap.animateCamera(cameraUpdate);
     }
