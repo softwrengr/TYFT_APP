@@ -38,11 +38,14 @@
     <string name="current_location">Ubicación actual</string>
     <string name="this_is_your_location">Esta es tu ubicación actual</string>
     <string name="no_internet">No hay conexión a internet disponible</string>
+    <string name="map">Mapa</string>
 
+    <string name="languages">Elegir lenguaje</string>
     <string name="setting">Ajuste</string>
     <string name="english">English</string>
     <string name="spanish">Spanish</string>
 
+    <string name="change_password">Cambia la contraseña</string>
     <string name="verify">Verificar</string>
     <string name="verify_text">Le hemos enviado el código en el correo electrónico que proporcionó, verifíquese.</string>
     <string name="resend_code_text">Reenviar código de confirmación en</string>

@@ -1,22 +1,20 @@
 package com.squaresdevelopers.tyft.views.fragments;
 
 import android.app.Dialog;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -26,6 +24,7 @@ import com.squaresdevelopers.tyft.dataModels.sellerProfileModels.SellerProfileDa
 import com.squaresdevelopers.tyft.databinding.FragmentSellerHomeBinding;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 import com.squaresdevelopers.tyft.utilities.GetLocation;
+import com.squaresdevelopers.tyft.utilities.LocaleUtilities;
 import com.squaresdevelopers.tyft.viewModels.SellerViewModel;
 import com.squaresdevelopers.tyft.views.activities.LoginActivity;
 
@@ -38,7 +37,14 @@ public class SellerHomeFragment extends Fragment {
 
     private SellerViewModel sellerViewModel;
     private FragmentSellerHomeBinding binding;
+    private String strLanguage;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LocaleUtilities.loadLocale(getActivity(),
+                GeneralUtils.getLanguage(getActivity()));
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,9 +52,9 @@ public class SellerHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_seller_home, container, false);
+
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
-        loadLocale();
         return binding.getRoot();
     }
 
@@ -106,7 +112,7 @@ public class SellerHomeFragment extends Fragment {
         binding.layoutSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectLanguages();
+               selectLanguages();
             }
         });
 
@@ -121,17 +127,50 @@ public class SellerHomeFragment extends Fragment {
         });
     }
 
-
     private void selectLanguages() {
         Dialog dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.language_layout);
+        LinearLayout llEnglish = dialog.findViewById(R.id.ll_english);
+        LinearLayout llSpanish = dialog.findViewById(R.id.ll_spanish);
+        CheckBox cbEnglish = dialog.findViewById(R.id.checkbox_english);
+        CheckBox cbSpanish = dialog.findViewById(R.id.checkbox_spanish);
         TextView tvCancel = dialog.findViewById(R.id.tv_cancel);
         TextView tvDone = dialog.findViewById(R.id.tv_done);
+
+        String checkLanguage = GeneralUtils.getLanguage(getActivity());
+        if(checkLanguage.equals("en")){
+            cbEnglish.setChecked(true);
+            cbSpanish.setChecked(false);
+        }
+        else {
+            cbSpanish.setChecked(true);
+            cbEnglish.setChecked(false);
+        }
+
+
+        llEnglish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cbEnglish.setChecked(true);
+                cbSpanish.setChecked(false);
+                strLanguage = "en";
+            }
+        });
+
+        llSpanish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cbSpanish.setChecked(true);
+                cbEnglish.setChecked(false);
+                strLanguage = "es";
+            }
+        });
 
         tvDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setLocale("es");
+                LocaleUtilities.changeLanguage(getActivity(),strLanguage);
+                getActivity().recreate();
                 dialog.dismiss();
 
             }
@@ -146,21 +185,6 @@ public class SellerHomeFragment extends Fragment {
         dialog.show();
     }
 
-    private void setLocale(String language) {
 
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getActivity().getBaseContext().getResources().updateConfiguration(config,
-                getActivity().getBaseContext().getResources().getDisplayMetrics());
-
-        GeneralUtils.putStringValueInEditor(getActivity(), "language", language);
-    }
-
-    private void loadLocale() {
-        String language = GeneralUtils.getLanguage(getActivity());
-        setLocale(language);
-    }
 
 }

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +30,7 @@ public class EmailVerificationFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         activityMainBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_forgot, container, false);
+        onback(activityMainBinding.getRoot());
         return activityMainBinding.getRoot();
     }
 
@@ -66,6 +69,24 @@ public class EmailVerificationFragment extends Fragment {
                 GeneralUtils.connectFragment(getActivity(), new LoginFragment());
             }
         });
+    }
+
+    private void onback(View view) {
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    getActivity().onBackPressed();
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
 }

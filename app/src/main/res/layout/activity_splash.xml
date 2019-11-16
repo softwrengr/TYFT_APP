@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/colorPrimary"
     tools:context=".views.activities.SplashActivity">
 
     <ImageView
@@ -13,17 +13,5 @@
         android:layout_height="200sp"
         android:src="@drawable/logo"
         android:layout_gravity="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/app_name"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="italic"
-        android:layout_gravity="center"
-        android:layout_marginRight="20sp"
-        android:fontFamily="@font/poppins_medium" />
 
 </FrameLayout>

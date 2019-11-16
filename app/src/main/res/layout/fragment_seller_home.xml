@@ -252,7 +252,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/setting"
+                        android:src="@drawable/translation"
                         android:tint="@color/colorPrimaryDark"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="15dp"  />
@@ -263,7 +263,7 @@
                         android:layout_marginEnd="5dp"
                         android:layout_marginRight="5dp"
                         android:fontFamily="@font/regular"
-                        android:text="@string/setting"
+                        android:text="@string/languages"
                         android:textColor="@color/black"
                         android:textStyle="bold"/>
 

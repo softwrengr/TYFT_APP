@@ -7,27 +7,64 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/tv_imperail"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_english"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/english"
-        android:textSize="16sp"
-        android:textColor="@color/black"
         android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"/>
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
 
-    <TextView
-        android:id="@+id/tv_metric"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="false"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_imperail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/english"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_spanish"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/spanish"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox_spanish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:clickable="false"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spanish"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+
 
 
     <LinearLayout
@@ -35,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
+        android:gravity="right"
         android:orientation="horizontal">
 
         <TextView
@@ -48,9 +85,7 @@
             android:textStyle="bold"
             android:layout_gravity="start"
             android:layout_marginRight="20dp"
-            android:textColor="#e60000" />
-
-
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/tv_cancel"
