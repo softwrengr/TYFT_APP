@@ -13,7 +13,7 @@ import android.provider.Settings;
 import androidx.core.app.ActivityCompat;
 import android.widget.Toast;
 
-import com.squaresdevelopers.tyft.views.activities.LoginActivity;
+import com.squaresdevelopers.tyft.views.login.LoginActivity;
 
 import static android.content.Context.LOCATION_SERVICE;
 

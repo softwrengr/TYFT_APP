@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.squaresdevelopers.tyft.R;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
-import com.squaresdevelopers.tyft.views.forgotPasswordViews.forgotPassFragments.EmailVerificationFragment;
+import com.squaresdevelopers.tyft.views.forgotPasswordViews.ui.EmailVerificationFragment;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 

@@ -54,4 +54,5 @@
     <string name="we_will_send_an_email_to_this_id">Le enviaremos un correo electrónico a esta ID, asegúrese de que sea su ID de correo electrónico personal</string>
     <string name="please_change_your_password_here_make_sure_the_password_is_easy_to_remember">Cambie su contraseña aquí, asegúrese de que la contraseña sea fácil de recordar.</string>
 
+    <string name="list">List</string>
 </resources>

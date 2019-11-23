@@ -3,14 +3,13 @@ package com.squaresdevelopers.tyft.views.activities;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.squaresdevelopers.tyft.R;
-import com.squaresdevelopers.tyft.views.fragments.loginSignUpViews.LoginSignUpFragment;
+import com.squaresdevelopers.tyft.views.truck.TruckMainActivity;
+import com.squaresdevelopers.tyft.views.tyft.TyftMainActivity;
+import com.squaresdevelopers.tyft.views.login.ui.LoginSignUpFragment;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 

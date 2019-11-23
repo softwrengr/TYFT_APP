@@ -25,10 +25,6 @@ public class GeneralUtils {
         return fragment;
     }
 
-    public static Fragment connectTyftFragment(Context context,Fragment fragment){
-        ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction().replace(R.id.bottom_container,fragment).commit();
-        return fragment;
-    }
 
     public static SharedPreferences.Editor putBooleanValueInEditor(Context context, String key, boolean value) {
         sharedPreferences = getSharedPreferences(context);

@@ -22,4 +22,7 @@
     <dimen name="margin_top_view_pager">60dp</dimen>
     <dimen name="stress_image_view_height">230dp</dimen>
     <dimen name="slider_text_size">14sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

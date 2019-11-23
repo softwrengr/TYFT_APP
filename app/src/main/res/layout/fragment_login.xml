@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <data>
+
         <variable
             name="LoginViewModel"
             type="com.squaresdevelopers.tyft.viewModels.LoginViewModel" />
@@ -20,9 +20,10 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="100sp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20sp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/logo" />
 
         <LinearLayout
@@ -30,13 +31,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/logo"
-            android:layout_marginLeft="30sp"
+            android:layout_marginStart="25sp"
             android:layout_marginTop="70sp"
-            android:layout_marginRight="30sp"
-            android:padding="10dp"
+            android:layout_marginEnd="25sp"
             android:background="@drawable/round_layout"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/account"
@@ -46,7 +47,7 @@
                 android:layout_marginTop="10sp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="@string/login_account"
-                android:textColor="@color/yellow"
+                android:textColor="@color/colorPrimary"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -58,11 +59,10 @@
                 android:layout_marginLeft="25sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="25sp"
-                android:hint="@string/email"
-                android:text="@={LoginViewModel.EmailAddress}"
-                android:inputType="textEmailAddress"
                 android:fontFamily="@font/regular"
-                android:textSize="18sp" />
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:text="@={LoginViewModel.EmailAddress}" />
 
             <EditText
                 android:id="@+id/et_password"
@@ -73,10 +73,9 @@
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="25sp"
                 android:fontFamily="@font/regular"
-                android:text="@={LoginViewModel.Password}"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textSize="18sp" />
+                android:text="@={LoginViewModel.Password}"/>
 
 
             <Button
@@ -88,11 +87,11 @@
                 android:layout_marginTop="10sp"
                 android:layout_marginRight="25sp"
                 android:layout_marginBottom="10sp"
-                android:onClick="@{(v) -> LoginViewModel.onClick(v)}"
                 android:background="@drawable/round_button"
                 android:fontFamily="@font/regular"
+                android:onClick="@{(v) -> LoginViewModel.onClick(v)}"
                 android:text="@string/login"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/forgot_password"
@@ -104,52 +103,71 @@
                 android:layout_marginBottom="5sp"
                 android:fontFamily="@font/regular"
                 android:text="@string/forgot"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textColor="@color/black"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/login_layout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20sp"
-            android:gravity="center"
+
+        <RelativeLayout
+            android:id="@+id/below_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/not_register"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.9sp"
+                android:background="@color/white" />
+
+
+            <ImageView
+                android:id="@+id/iv_back"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/regular"
-                android:text="@string/not_register"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:layout_height="40sp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:alpha="0.5"
+                android:src="@drawable/back_arrow"
+                android:tint="@color/white" />
 
-            <Button
-                android:id="@+id/btn_sign_up"
-                android:layout_width="150sp"
-                android:layout_height="45dp"
-                android:layout_below="@id/not_register"
-                android:layout_alignBaseline="@id/not_register"
-                android:layout_marginLeft="5sp"
-                android:layout_marginTop="5sp"
-                android:background="@drawable/round_button_white"
-                android:fontFamily="@font/regular"
-                android:text="@string/singup"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+            <View
+                android:id="@+id/view"
+                android:layout_toRightOf="@+id/iv_back"
+                android:layout_width="1sp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/view">
+
+                <TextView
+                    android:id="@+id/sign_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/regular"
+                    android:text="@string/not_register"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
 
 
-        </LinearLayout>
+        </RelativeLayout>
+
         <ProgressBar
+            android:id="@+id/progess"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/progess"
-            app:visibility="@{LoginViewModel.progressBar}"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            app:visibility="@{LoginViewModel.progressBar}" />
     </RelativeLayout>
 
 

@@ -11,7 +11,7 @@
     <string name="edit">Edit Profile</string>
     <string name="login">Login</string>
     <string name="already">Already Registered?</string>
-    <string name="not_register">Not Registered Yet?</string>
+    <string name="not_register">Not registered yet? <b>Sign up</b></string>
     <string name="login_account">Sign In</string>
     <string name="forgot">Forget Password</string>
     <string name="profile">User Profile</string>
@@ -52,4 +52,5 @@
     <string name="skip">Skip</string>
     <string name="we_will_send_an_email_to_this_id">We will send an email to this ID, ensure its your personal Email ID</string>
     <string name="please_change_your_password_here_make_sure_the_password_is_easy_to_remember">Please change your password here, make sure the password is easy to remember</string>
+    <string name="list">List</string>
 </resources>

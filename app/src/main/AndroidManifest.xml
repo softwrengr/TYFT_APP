@@ -22,11 +22,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon">
+
         <activity android:name=".views.forgotPasswordViews.ForgotPasswordActivity" />
-        <activity android:name=".views.activities.LoginActivity" />
-        <activity android:name=".views.activities.TruckSignupActivity" />
-        <activity android:name=".views.activities.TyftMainActivity" />
-        <activity android:name=".views.activities.TruckMainActivity" />
+        <activity android:name=".views.login.LoginActivity" />
+        <activity android:name=".views.signup.TruckSignupActivity" />
+        <activity android:name=".views.truck.TruckMainActivity" />
+        <activity
+            android:name=".views.tyft.TyftMainActivity"></activity>
+
         <activity
             android:name=".views.activities.SplashActivity"
             android:noHistory="true">
