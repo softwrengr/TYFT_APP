@@ -38,6 +38,7 @@
     <string name="this_is_your_location">This is your current location</string>
     <string name="no_internet">No Internet Connection Available</string>
     <string name="map">Map</string>
+    <string name="route">Get Direction</string>
 
     <string name="languages">Set Language</string>
     <string name="setting">Setting</string>

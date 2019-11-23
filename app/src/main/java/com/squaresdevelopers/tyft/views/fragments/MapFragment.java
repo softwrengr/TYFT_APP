@@ -2,18 +2,28 @@ package com.squaresdevelopers.tyft.views.fragments;
 
 import android.Manifest;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
 import com.google.android.material.snackbar.Snackbar;
+
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AlertDialog;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +47,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squaresdevelopers.tyft.R;
 import com.squaresdevelopers.tyft.dataModels.locationDataModel.GetSellerLocation;
+import com.squaresdevelopers.tyft.dataModels.sellerProfileModels.SellerProfileDataModel;
 import com.squaresdevelopers.tyft.dataModels.sellerProfileModels.SellerProfileResponseModel;
 import com.squaresdevelopers.tyft.networking.ApiClient;
 import com.squaresdevelopers.tyft.networking.ApiInterface;
@@ -45,6 +56,8 @@ import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 import com.squaresdevelopers.tyft.utilities.GetLocation;
 import com.squaresdevelopers.tyft.utilities.InternetUtils;
 import com.squaresdevelopers.tyft.utilities.NetworkUtils;
+import com.squaresdevelopers.tyft.viewModels.SellerViewModel;
+import com.squaresdevelopers.tyft.viewModels.TruckViewModel;
 
 import org.json.JSONObject;
 
@@ -53,7 +66,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,7 +80,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     MapView mapView;
     private GoogleMap googleMap;
 
-    TextView  tvUsername;
+    TextView tvUsername;
     ImageView ivOne, ivTwo;
 
     FirebaseDatabase firebaseDatabase;
@@ -151,7 +166,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                         String lng = model.getStrLongitude();
 
                         try {
-                            calculateTiming(id,date,startTime,endTime,lat,lng);
+                            calculateTiming(id, date, startTime, endTime, lat, lng);
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -187,8 +202,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 //if time matched
                 if (date_from.before(dateNow) && date_to.after(dateNow)) {
                     showMarker(latitude, longitude, id, true);
-                }
-                else {
+                } else {
                     showMarker(latitude, longitude, id, false);
                 }
             }
@@ -227,7 +241,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                showUser2Dialog(marker.getSnippet());
+                showUser2Dialog(marker.getSnippet(), marker.getPosition());
                 return false;
 
             }
@@ -261,10 +275,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     }
 
-    private void showUser2Dialog(String id) {
+    private void showUser2Dialog(String id, LatLng markerLatLng) {
         Dialog dialog = new Dialog(getActivity());
         dialog.setContentView(R.layout.user2_dialog);
         // tvUserEmail = dialog.findViewById(R.id.tv_user2_email);
+        Button btnGetDirection = dialog.findViewById(R.id.btn_get_direction);
         tvUsername = dialog.findViewById(R.id.tv_user2_username);
         ivOne = dialog.findViewById(R.id.iv_user2_one);
         ivTwo = dialog.findViewById(R.id.iv_user2_two);
@@ -287,6 +302,20 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 NetworkUtils.showImage(getActivity(), strImageTwo, strName);
             }
         });
+
+        btnGetDirection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("http://maps.google.com/maps.mytracks?saddr=" +
+                                String.valueOf(markerLatLng.latitude) + "," +
+                                String.valueOf(markerLatLng.longitude) +
+                                "&daddr=" + GeneralUtils.getUserLatitude(getActivity()) +
+                                "," + GeneralUtils.getUserLongitude(getActivity())));
+                startActivity(intent);
+            }
+        });
+        dialog.show();
     }
 
 
@@ -347,12 +376,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private void snackBar(String msg) {
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG);
 
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("d-MM-yyyy");
-        SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss aa");
-
-        String formattedDate = dateFormatter.format(c.getTime());
-        String formattedTime = timeFormatter.format(c.getTime());
     }
 
 

@@ -73,6 +73,10 @@ public class GeneralUtils {
         return getSharedPreferences(context).getInt("seller_id",0);
     }
 
+    public static String getTruckUserID(Context context){
+        return getSharedPreferences(context).getString("truck_user_id","0");
+    }
+
     public static String getUser2Email(Context context){
         return getSharedPreferences(context).getString("user2_email","");
     }

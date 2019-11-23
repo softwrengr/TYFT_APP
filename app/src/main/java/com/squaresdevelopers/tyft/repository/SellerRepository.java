@@ -33,7 +33,7 @@ public class SellerRepository {
     private ArrayList<SellerProfileDataModel> userList = new ArrayList<>();
     private MutableLiveData<List<SellerProfileDataModel>> getUserData = new MutableLiveData<>();
 
-    public SellerRepository(Application application,MutableLiveData<Integer> progressBar) {
+    public SellerRepository(Application application, MutableLiveData<Integer> progressBar) {
         this.context = application;
         this.progressBar = progressBar;
         apiCallProfile();
@@ -43,11 +43,11 @@ public class SellerRepository {
         return getUserData;
     }
 
-    public MutableLiveData<String> getEmail(){
+    public MutableLiveData<String> getEmail() {
         return email;
     }
 
-    public MutableLiveData<String> getName(){
+    public MutableLiveData<String> getName() {
         return name;
     }
 
@@ -67,7 +67,7 @@ public class SellerRepository {
                         Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
-                } else  {
+                } else {
                     name.setValue(response.body().getData().getUserType());
                     email.setValue(response.body().getData().getEmail());
                     userList.add(response.body().getData());
