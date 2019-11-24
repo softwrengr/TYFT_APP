@@ -8,5 +8,7 @@
     <color name="black">#000</color>
     <color name="yellow">#ff9900</color>
     <color name="blue">#006699</color>
+    <color name="gray">#F3F3F3</color>
+
     <color name="bubble_back_color">#F3F3F3</color>
 </resources>

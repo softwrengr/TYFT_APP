@@ -30,6 +30,7 @@
     <string name="start_time">Seleccione hora de inicio</string>
     <string name="end_time">Seleccionar hora de finalización</string>
     <string name="you_visible">serás visible para el usuario</string>
+    <string name="visible">will be visible to user</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="done">Hecho</string>

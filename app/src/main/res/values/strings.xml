@@ -29,6 +29,7 @@
     <string name="start_time">Select start time</string>
     <string name="end_time">Select end time</string>
     <string name="you_visible">you will be visible to user</string>
+    <string name="visible">will be visible to user</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="done">Done</string>
