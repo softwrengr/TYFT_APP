@@ -41,17 +41,9 @@ public class TyftUserAdapter extends RecyclerView.Adapter<TyftUserAdapter.MyView
     public void onBindViewHolder(@NonNull final TyftUserAdapter.MyViewHolder viewHolder, final int position) {
         final AvailableUserModel model = dailyList.get(position);
 
-        if(model.getCheckLocation().equals("1")){
-            viewHolder.tvTruckName.setText(model.getName());
-            viewHolder.tvEmail.setText(model.getEmail());
-            Glide.with(context).load(model.getImage1()).into(viewHolder.ivOne);
-            Glide.with(context).load(model.getImage2()).into(viewHolder.ivTwo);
-        }
-        else {
-            viewHolder.layout.setVisibility(View.GONE);
-        }
-
-
+            viewHolder.tvTruckName.setText(model.getStrName());
+            Glide.with(context).load(model.getStrImageOne()).into(viewHolder.ivOne);
+            Glide.with(context).load(model.getStrImageTwo()).into(viewHolder.ivTwo);
 
     }
 

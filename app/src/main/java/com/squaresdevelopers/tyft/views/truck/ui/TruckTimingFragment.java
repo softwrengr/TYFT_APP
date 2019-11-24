@@ -68,7 +68,7 @@ public class TruckTimingFragment extends Fragment {
     private int sellerID;
     private String strDate, strStartTime, strEndTime, AM_PM;
 
-    SimpleDateFormat formatter,simpleDateFormat,currentDate;
+    SimpleDateFormat formatter,currentDate;
     private boolean check = false;
 
     @Override
@@ -218,7 +218,10 @@ public class TruckTimingFragment extends Fragment {
                 strStartTime,
                 strEndTime,
                 GeneralUtils.getUserLatitude(getActivity()),
-                GeneralUtils.getUserLongitude(getActivity()));
+                GeneralUtils.getUserLongitude(getActivity()),
+                GeneralUtils.getUserImage1(getActivity()),
+                GeneralUtils.getUserImage2(getActivity()),
+                GeneralUtils.getUser2Text(getActivity()));
 
         databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

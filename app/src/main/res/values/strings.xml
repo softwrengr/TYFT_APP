@@ -10,7 +10,7 @@
     <string name="singout">Sign Out</string>
     <string name="edit">Edit Profile</string>
     <string name="login">Login</string>
-    <string name="already">Already Registered?</string>
+    <string name="already">Already Registered? <b>Login</b></string>
     <string name="not_register">Not registered yet? <b>Sign up</b></string>
     <string name="login_account">Sign In</string>
     <string name="forgot">Forget Password</string>

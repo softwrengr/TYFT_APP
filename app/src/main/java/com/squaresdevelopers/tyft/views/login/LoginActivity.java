@@ -18,5 +18,4 @@ public class LoginActivity extends AppCompatActivity {
         GeneralUtils.connectFragment(this, new LoginFragment());
     }
 
-
 }

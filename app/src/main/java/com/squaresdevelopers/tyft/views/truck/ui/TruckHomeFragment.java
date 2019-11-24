@@ -17,7 +17,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squaresdevelopers.tyft.R;
+import com.squaresdevelopers.tyft.dataModels.locationDataModel.SellerLocationModel;
 import com.squaresdevelopers.tyft.dataModels.sellerProfileModels.SellerProfileDataModel;
 import com.squaresdevelopers.tyft.databinding.FragmentSellerHomeBinding;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
@@ -26,22 +31,31 @@ import com.squaresdevelopers.tyft.utilities.LocaleUtilities;
 import com.squaresdevelopers.tyft.viewModels.SellerViewModel;
 import com.squaresdevelopers.tyft.views.login.LoginActivity;
 
+import java.util.HashMap;
 import java.util.List;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class TruckHomeFragment extends Fragment {
 
     private GetLocation getLocation;
-
     private SellerViewModel sellerViewModel;
     private FragmentSellerHomeBinding binding;
     private String strLanguage;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LocaleUtilities.loadLocale(getActivity(),
                 GeneralUtils.getLanguage(getActivity()));
+
+        getLocation = new GetLocation();
+        getLocation.getLocation(getActivity());
+        updatingLocation();
+
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -49,9 +63,7 @@ public class TruckHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_seller_home, container, false);
-
-        getLocation = new GetLocation();
-        getLocation.getLocation(getActivity());
+        FirebaseApp.initializeApp(getActivity());
         return binding.getRoot();
     }
 
@@ -182,6 +194,12 @@ public class TruckHomeFragment extends Fragment {
         dialog.show();
     }
 
-
+    private void updatingLocation() {
+        int sellerID = GeneralUtils.getSellerId(getActivity());
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("strLatitude", GeneralUtils.getUserLatitude(getActivity()));
+        result.put("strLongitude",GeneralUtils.getUserLongitude(getActivity()));
+        FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID)).updateChildren(result);
+    }
 
 }

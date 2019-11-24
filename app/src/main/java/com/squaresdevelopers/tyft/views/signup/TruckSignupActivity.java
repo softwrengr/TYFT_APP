@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import com.squaresdevelopers.tyft.R;
 import com.squaresdevelopers.tyft.views.login.LoginActivity;
-import com.squaresdevelopers.tyft.views.signup.ui.CustomerSignUpFragment;
-import com.squaresdevelopers.tyft.views.signup.ui.SellerSignUpFragment;
+import com.squaresdevelopers.tyft.views.signup.ui.TyftSignUpFragment;
+import com.squaresdevelopers.tyft.views.signup.ui.TruckSignUpFragment;
 import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 
 public class TruckSignupActivity extends AppCompatActivity {
@@ -23,9 +23,9 @@ public class TruckSignupActivity extends AppCompatActivity {
         if(bundle != null){
             String strUserType = bundle.getString("userType");
             if (strUserType.equals("user1")) {
-                GeneralUtils.connectFragment(this, new SellerSignUpFragment());
+                GeneralUtils.connectFragment(this, new TruckSignUpFragment());
             } else {
-                GeneralUtils.connectFragment(this, new CustomerSignUpFragment());
+                GeneralUtils.connectFragment(this, new TyftSignUpFragment());
             }
 
         }

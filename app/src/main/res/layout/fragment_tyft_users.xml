@@ -7,7 +7,7 @@
     <data>
         <variable
             name="UserViewModel"
-            type="com.squaresdevelopers.tyft.viewModels.TyftUserViewModel" />
+            type="com.squaresdevelopers.tyft.viewModels.AllTruckViewModel" />
     </data>
 
     <RelativeLayout

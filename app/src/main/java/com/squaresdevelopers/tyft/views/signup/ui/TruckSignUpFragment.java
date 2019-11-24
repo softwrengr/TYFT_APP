@@ -10,8 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AlertDialog;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squaresdevelopers.tyft.R;
@@ -51,7 +54,7 @@ import retrofit2.Response;
 import static android.app.Activity.RESULT_OK;
 
 
-public class SellerSignUpFragment extends Fragment {
+public class TruckSignUpFragment extends Fragment {
     AlertDialog alertDialog;
     View view;
     @BindView(R.id.iv_seller_one)
@@ -64,10 +67,12 @@ public class SellerSignUpFragment extends Fragment {
     EditText etEmail;
     @BindView(R.id.et_seller_password)
     EditText etPassword;
-    @BindView(R.id.btn_seller_already_register)
-    Button btnAlreadyLogin;
+    @BindView(R.id.tv_login)
+    TextView tvLogin;
     @BindView(R.id.btn_seller_signup)
     Button btnSellerSignup;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
 
     String strEmail, strPassword, strTextField;
     private File file1, file2;
@@ -90,10 +95,10 @@ public class SellerSignUpFragment extends Fragment {
     private void initUI() {
         BaseNetworking.grantPermission(getActivity());
 
-        btnAlreadyLogin.setOnClickListener(new View.OnClickListener() {
+        tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GeneralUtils.connectFragment(getActivity(), new LoginFragment());
+                getActivity().onBackPressed();
             }
         });
 
@@ -123,6 +128,13 @@ public class SellerSignUpFragment extends Fragment {
                 bBoolean = true;
                 aBoolean = false;
                 cameraBuilder();
+            }
+        });
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
             }
         });
 

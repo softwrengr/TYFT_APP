@@ -2,15 +2,18 @@ package com.squaresdevelopers.tyft.dataModels.locationDataModel;
 
 public class SellerLocationModel {
 
-    public String strID,date,startTime,endTime,strLatitude,strLongitude;
+    public String strID,date,startTime,endTime,strLatitude,strLongitude,strImageOne,strImageTwo,strName;
 
-    public SellerLocationModel(String strID,String date, String startTime, String endTime, String strLatitude, String strLongitude) {
+    public SellerLocationModel(String strID, String date, String startTime, String endTime, String strLatitude, String strLongitude, String strImageOne, String strImageTwo, String strName) {
         this.strID = strID;
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.strLatitude = strLatitude;
         this.strLongitude = strLongitude;
+        this.strImageOne = strImageOne;
+        this.strImageTwo = strImageTwo;
+        this.strName = strName;
     }
 
     public String getStrID() {
@@ -59,5 +62,29 @@ public class SellerLocationModel {
 
     public void setStrLongitude(String strLongitude) {
         this.strLongitude = strLongitude;
+    }
+
+    public String getStrImageOne() {
+        return strImageOne;
+    }
+
+    public void setStrImageOne(String strImageOne) {
+        this.strImageOne = strImageOne;
+    }
+
+    public String getStrImageTwo() {
+        return strImageTwo;
+    }
+
+    public void setStrImageTwo(String strImageTwo) {
+        this.strImageTwo = strImageTwo;
+    }
+
+    public String getStrName() {
+        return strName;
+    }
+
+    public void setStrName(String strName) {
+        this.strName = strName;
     }
 }

@@ -5,67 +5,86 @@ import com.google.gson.annotations.SerializedName;
 
 public class AvailableUserModel {
 
-    private String id;
-    private String name;
-    private String email;
-    private String userType;
-    private String image1;
-    private String image2;
-    private String checkLocation;
+    public String strID,
+            date,
+            startTime,
+            endTime,
+            strLatitude,
+            strLongitude,
+            strImageOne,
+            strImageTwo,
+            strName;
 
-    public String getId() {
-        return id;
+
+    public String getStrID() {
+        return strID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStrID(String strID) {
+        this.strID = strID;
     }
 
-    public String getName() {
-        return name;
+    public String getDate() {
+        return date;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getEmail() {
-        return email;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public String getUserType() {
-        return userType;
+    public String getEndTime() {
+        return endTime;
     }
 
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
-    public String getImage1() {
-        return image1;
+    public String getStrLatitude() {
+        return strLatitude;
     }
 
-    public void setImage1(String image1) {
-        this.image1 = image1;
+    public void setStrLatitude(String strLatitude) {
+        this.strLatitude = strLatitude;
     }
 
-    public String getImage2() {
-        return image2;
+    public String getStrLongitude() {
+        return strLongitude;
     }
 
-    public void setImage2(String image2) {
-        this.image2 = image2;
+    public void setStrLongitude(String strLongitude) {
+        this.strLongitude = strLongitude;
     }
 
-    public String getCheckLocation() {
-        return checkLocation;
+    public String getStrImageOne() {
+        return strImageOne;
     }
 
-    public void setCheckLocation(String checkLocation) {
-        this.checkLocation = checkLocation;
+    public void setStrImageOne(String strImageOne) {
+        this.strImageOne = strImageOne;
+    }
+
+    public String getStrImageTwo() {
+        return strImageTwo;
+    }
+
+    public void setStrImageTwo(String strImageTwo) {
+        this.strImageTwo = strImageTwo;
+    }
+
+    public String getStrName() {
+        return strName;
+    }
+
+    public void setStrName(String strName) {
+        this.strName = strName;
     }
 }

@@ -1,13 +1,17 @@
 package com.squaresdevelopers.tyft.views.signup.ui;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AlertDialog;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squaresdevelopers.tyft.R;
@@ -28,7 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class CustomerSignUpFragment extends Fragment {
+public class TyftSignUpFragment extends Fragment {
     AlertDialog alertDialog;
     View view;
     @BindView(R.id.et_customer_email)
@@ -39,13 +43,16 @@ public class CustomerSignUpFragment extends Fragment {
     EditText etCustomerUsername;
     @BindView(R.id.btn_customer_login)
     Button btnCustomerLogin;
-    @BindView(R.id.btn_customer_already_register)
-    Button btnAlreadySignUp;
+    @BindView(R.id.tv_login)
+    TextView tvLogin;
+    @BindView(R.id.iv_back)
+    ImageView ivBack;
 
     String strEmail, strPassword, strUserType, strUsername;
     boolean valid = false;
 
     GetLocation getLocation;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,10 +80,17 @@ public class CustomerSignUpFragment extends Fragment {
             }
         });
 
-        btnAlreadySignUp.setOnClickListener(new View.OnClickListener() {
+        tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GeneralUtils.connectFragment(getActivity(), new LoginFragment());
+            }
+        });
+
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
             }
         });
 
@@ -119,7 +133,7 @@ public class CustomerSignUpFragment extends Fragment {
         strUsername = etCustomerUsername.getText().toString().trim();
 
 
-        if (strEmail.isEmpty()  ||  !android.util.Patterns.EMAIL_ADDRESS.matcher(strEmail).matches()) {
+        if (strEmail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(strEmail).matches()) {
             etCustomerEmail.setError("enter a valid email address");
             valid = false;
         } else {
@@ -134,7 +148,7 @@ public class CustomerSignUpFragment extends Fragment {
         }
 
 
-        if (strPassword.isEmpty() || strPassword.length()<6) {
+        if (strPassword.isEmpty() || strPassword.length() < 6) {
             etCustomerPassword.setError("Please enter a strong password");
             valid = false;
         } else {

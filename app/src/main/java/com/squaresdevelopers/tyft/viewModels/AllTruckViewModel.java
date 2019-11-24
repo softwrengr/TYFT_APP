@@ -7,20 +7,20 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.SavedStateHandle;
 
 import com.squaresdevelopers.tyft.dataModels.tyftUserDataModels.AvailableUserModel;
-import com.squaresdevelopers.tyft.repository.TyftUserRepository;
+import com.squaresdevelopers.tyft.repository.AllTrucksRepository;
 
 import java.util.List;
 
-public class TyftUserViewModel extends AndroidViewModel {
+public class AllTruckViewModel extends AndroidViewModel {
     private SavedStateHandle mState;
-    private TyftUserRepository userRepository;
+    private AllTrucksRepository userRepository;
 
     private MutableLiveData<List<AvailableUserModel>> userMutableLiveData;
 
-    public TyftUserViewModel(@NonNull Application application,SavedStateHandle savedStateHandle) {
+    public AllTruckViewModel(@NonNull Application application, SavedStateHandle savedStateHandle) {
         super(application);
         mState = savedStateHandle;
-        userRepository = new TyftUserRepository(application);
+        userRepository = new AllTrucksRepository(application);
         userMutableLiveData = userRepository.getAllWords();
 
     }

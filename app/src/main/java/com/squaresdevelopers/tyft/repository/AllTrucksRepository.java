@@ -1,7 +1,9 @@
 package com.squaresdevelopers.tyft.repository;
 
 import android.app.Application;
-import androidx.lifecycle.LiveData;
+import android.content.Context;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
@@ -15,16 +17,21 @@ import com.squaresdevelopers.tyft.dataModels.tyftUserDataModels.AvailableUserMod
 import java.util.ArrayList;
 import java.util.List;
 
-public class TyftUserRepository {
+public class AllTrucksRepository {
+    private Context context;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
     private ArrayList<AvailableUserModel> userList = new ArrayList<>();
-    private MutableLiveData<List<AvailableUserModel>> mAllWords = new MutableLiveData<>();
+    private MutableLiveData<List<AvailableUserModel>> mAllTrucks = new MutableLiveData<>();
 
 
-    public TyftUserRepository(Application application) {
+    public AllTrucksRepository(Application application) {
+        context = application.getApplicationContext();
+        getDataFromFirebase();
+    }
 
+    private void getDataFromFirebase() {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Seller_Location");
 
@@ -34,21 +41,19 @@ public class TyftUserRepository {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     AvailableUserModel model = postSnapshot.getValue(AvailableUserModel.class);
                     userList.add(model);
-                    mAllWords.setValue(userList);
-
+                    mAllTrucks.setValue(userList);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Toast.makeText(context, "sorry there are some error from firebase", Toast.LENGTH_SHORT).show();
             }
 
         });
-
     }
 
     public MutableLiveData<List<AvailableUserModel>> getAllWords() {
-        return mAllWords;
+        return mAllTrucks;
     }
 }
