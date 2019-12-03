@@ -15,6 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AlertDialog;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,6 +87,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_map, container, false);
         ButterKnife.bind(this, view);
+        onback(view);
         mapView = view.findViewById(R.id.mapView);
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
@@ -364,6 +366,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     private void snackBar(String msg) {
         Snackbar.make(view, msg, Snackbar.LENGTH_LONG);
+
+    }
+
+    private void onback(View view) {
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    getActivity().finishAffinity();
+                    return true;
+                }
+                return false;
+            }
+        });
 
     }
 

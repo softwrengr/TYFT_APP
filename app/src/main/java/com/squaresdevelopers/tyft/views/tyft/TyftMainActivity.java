@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squaresdevelopers.tyft.R;
+import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -17,6 +18,8 @@ public class TyftMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tyft_main);
+        this.setTitle(GeneralUtils.getUserType(this));
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

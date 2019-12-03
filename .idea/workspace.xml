@@ -10,13 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f293703a-937c-49c9-bfe4-e55bfce8daf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/TruckDetailActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_truck_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/more.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/more.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -24,13 +17,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/adapters/TyftUserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/adapters/TyftUserAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/custom_users_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/custom_users_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_set_timing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_set_timing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/networking/ApiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/networking/ApiInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginSignUpFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginSignUpFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/TruckSignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/TruckSignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/map/MapFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/map/MapFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,21 +47,7 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/TruckDetailActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="122" column="85" selection-start-line="122" selection-start-column="85" selection-end-line="122" selection-end-column="85" />
-              <folding>
-                <element signature="e#3364#3415#0" expanded="true" />
-                <element signature="e#3442#3498#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,16 +69,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_seller_home.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/repository/ShowTruckRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/viewModels/TruckViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/repository/TruckProfileRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/fragments/MapFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/TYFT/ui/map/DashboardFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/fragments/loginSignUpViews/LoginFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/TYFT/ui/home/HomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/bottom_nav_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" />
@@ -107,10 +84,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_m.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/TYFT/TyftMainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/utilities/GeneralUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/ListViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_notifications.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/round_button.xml" />
@@ -121,7 +95,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up_customer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/ui/TyftSignUpFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/LoginActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/dataModels/locationDataModel/SellerLocationModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckTimingFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/repository/TyftUserRepository.java" />
@@ -134,14 +107,23 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_set_timing.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_truck_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/TruckDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-es/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/TruckSignupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/networking/ApiInterface.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginSignUpFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/map/MapFragment.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="749" />
   </component>
@@ -155,36 +137,8 @@
     <panes>
       <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TYFT_APP" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="TYFT_APP" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="TYFT_APP" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TYFT_APP" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="squaresdevelopers" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574599321339</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="list added">
+      <created>1574617223219</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574617223219</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -419,8 +380,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="749" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29885992" />
       <window_info id="Structure" order="1" side_tool="true" />
@@ -432,7 +392,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="0" weight="0.81191224" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49918568" weight="0.55642635" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49918568" weight="0.5555556" />
       <window_info anchor="bottom" id="Android Profiler" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5822785" />
       <window_info anchor="bottom" id="Terminal" order="4" />
@@ -440,7 +400,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5008143" side_tool="true" weight="0.55642635" />
       <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Build" order="9" weight="0.3260188" />
+      <window_info anchor="bottom" id="Build" order="9" weight="0.32489452" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3291536" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -476,55 +436,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_seller_home.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="307" column="27" lean-forward="true" selection-start-line="307" selection-start-column="27" selection-end-line="307" selection-end-column="27" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/TYFT/ui/setting/TyftSettingViewModel.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/TyftMainActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tyft_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/utilities/GeneralUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckEditProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login_sign_up.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -535,20 +453,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/ListViewModel.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_notifications.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/setting/TyftSettingFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -562,17 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/ui/TruckSignUpFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="136" column="46" selection-start-line="136" selection-start-column="46" selection-end-line="136" selection-end-column="46" />
-          <folding>
-            <element signature="e#4305#4306#0" expanded="true" />
-            <element signature="e#4366#4367#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
@@ -582,6 +479,7 @@
       <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="177" column="47" selection-start-line="177" selection-start-column="42" selection-end-line="177" selection-end-column="47" />
@@ -590,23 +488,22 @@
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
           <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up_customer.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/ui/TyftSignUpFragment.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -615,66 +512,6 @@
           <folding>
             <element signature="e#2956#2957#0" expanded="true" />
             <element signature="e#3017#3018#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginSignUpFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-963">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/repository/SellerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckTimingFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="223" column="55" selection-start-line="223" selection-start-column="55" selection-end-line="223" selection-end-column="55" />
-          <folding>
-            <element signature="method#onCreateView#0;class#TruckTimingFragment#0" />
-            <element signature="method#showCalendar#0;class#TruckTimingFragment#0" />
-            <element signature="method#formattedDate#0;class#TruckTimingFragment#0" />
-            <element signature="method#showHourPicker#0;class#TruckTimingFragment#0" />
-            <element signature="method#showUserTime#0;class#TruckTimingFragment#0" />
-            <element signature="method#showSweetDialog#0;class#TruckTimingFragment#0" />
-            <element signature="method#validate#0;class#TruckTimingFragment#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
-          <folding>
-            <element signature="e#4585#4586#0" expanded="true" />
-            <element signature="e#4633#4634#0" expanded="true" />
-            <element signature="e#6986#6987#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -785,21 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="nav-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/list/TruckListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -808,12 +630,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/custom_users_layout.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
           <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -823,24 +645,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_layout.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/user2_dialog.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="73">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="60" selection-end-column="23" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_set_timing.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/round_layout.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -859,16 +681,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/btn2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/btn2.png" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_seller_map.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckMapFragment.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -884,37 +704,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-es/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_truck_detail.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="83" column="39" lean-forward="true" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
           <folding>
             <element signature="e#3127#3144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/map/MapFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="303" column="38" lean-forward="true" selection-start-line="303" selection-start-column="38" selection-end-line="303" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -926,6 +722,170 @@
           <folding>
             <element signature="e#3364#3415#0" expanded="true" />
             <element signature="e#3442#3498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/ui/TruckSignUpFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="267" selection-start-line="267" selection-end-line="267" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-es/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_truck_signup.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/signup/TruckSignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/viewModels/LoginViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="75" column="68" lean-forward="true" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/viewModels/SellerViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/networking/ApiInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/repository/SellerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="56" column="70" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/setting/TyftSettingFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckTimingFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="242" column="64" lean-forward="true" selection-start-line="242" selection-start-column="64" selection-end-line="242" selection-end-column="64" />
+          <folding>
+            <element signature="method#onCreateView#0;class#TruckTimingFragment#0" />
+            <element signature="method#showCalendar#0;class#TruckTimingFragment#0" />
+            <element signature="method#formattedDate#0;class#TruckTimingFragment#0" />
+            <element signature="method#showHourPicker#0;class#TruckTimingFragment#0" />
+            <element signature="method#showUserTime#0;class#TruckTimingFragment#0" />
+            <element signature="method#validate#0;class#TruckTimingFragment#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="86" column="69" lean-forward="true" selection-start-line="86" selection-start-column="69" selection-end-line="86" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/login/ui/LoginSignUpFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/TruckMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/truck/ui/TruckHomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
+          <folding>
+            <element signature="e#4816#4817#0" expanded="true" />
+            <element signature="e#4864#4865#0" expanded="true" />
+            <element signature="e#7217#7218#0" expanded="true" />
+            <element signature="e#7265#7266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/TyftMainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml">
+      <provider editor-type-id="nav-designer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/squaresdevelopers/tyft/views/tyft/ui/map/MapFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

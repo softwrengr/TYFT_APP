@@ -22,7 +22,7 @@ public class TruckSignupActivity extends AppCompatActivity {
 
         if(bundle != null){
             String strUserType = bundle.getString("userType");
-            if (strUserType.equals("user1")) {
+            if (strUserType.equals("Vendor")) {
                 GeneralUtils.connectFragment(this, new TruckSignUpFragment());
             } else {
                 GeneralUtils.connectFragment(this, new TyftSignUpFragment());

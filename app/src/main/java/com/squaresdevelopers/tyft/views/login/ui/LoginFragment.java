@@ -7,6 +7,8 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +79,7 @@ public class LoginFragment extends Fragment {
             public void onChanged(@Nullable LoginResponseModel loginUser) {
 
                 if (loginUser.getSuccess()) {
-                    if (loginUser.getMessage().equals("user1 Successfully logged In")) {
+                    if (loginUser.getMessage().equals("Vendor Successfully logged In")) {
                         GeneralUtils.putStringValueInEditor(getContext(), "token", loginUser.getData().getApiToken());
                         GeneralUtils.putIntValueInEditor(getContext(), "seller_id", loginUser.getData().getId());
                         GeneralUtils.putBooleanValueInEditor(getContext(), "isLoginUser1", true);
@@ -85,8 +87,9 @@ public class LoginFragment extends Fragment {
                         startActivity(new Intent(getActivity(), TruckMainActivity.class));
 
                     }
-                    if (loginUser.getMessage().equals("user2 Successfully logged In")) {
+                    if (loginUser.getMessage().equals("Tyft Successfully logged In")) {
                         GeneralUtils.putBooleanValueInEditor(getContext(), "isLoginUser2", true);
+                        GeneralUtils.putIntValueInEditor(getContext(), "seller_id", loginUser.getData().getId());
                         getActivity().finish();
                         startActivity(new Intent(getActivity(), TyftMainActivity.class));
 
@@ -117,9 +120,8 @@ public class LoginFragment extends Fragment {
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().onBackPressed();
+                GeneralUtils.connectFragment(getActivity(),new LoginSignUpFragment());
             }
         });
     }
-
 }

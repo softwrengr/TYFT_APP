@@ -3,6 +3,7 @@ package com.squaresdevelopers.tyft.views.truck.ui;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,7 @@ public class TruckHomeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_seller_home, container, false);
+        onback(binding.getRoot());
         FirebaseApp.initializeApp(getActivity());
         return binding.getRoot();
     }
@@ -200,6 +202,24 @@ public class TruckHomeFragment extends Fragment {
         result.put("strLatitude", GeneralUtils.getUserLatitude(getActivity()));
         result.put("strLongitude",GeneralUtils.getUserLongitude(getActivity()));
         FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID)).updateChildren(result);
+    }
+
+    private void onback(View view) {
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    getActivity().finishAffinity();
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
 }

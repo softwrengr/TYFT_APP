@@ -70,7 +70,7 @@ public interface ApiInterface {
                                                         @Part MultipartBody.Part photo2,
                                                         @Part("image2") RequestBody fileName2);
 
-    @GET("own-profile/{version}")
+    @POST("own-profile/{version}")
     Call<SellerProfileResponseModel> getUser2Profile(@Path("version") int id);
 
     @GET("getUser1")

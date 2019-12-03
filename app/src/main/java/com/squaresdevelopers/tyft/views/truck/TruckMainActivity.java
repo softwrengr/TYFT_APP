@@ -13,7 +13,7 @@ public class TruckMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ((AppCompatActivity)this).getSupportActionBar().hide();
+        this.setTitle(GeneralUtils.getUserType(this));
 
         GeneralUtils.connectFragment(this, new TruckHomeFragment());
     }

@@ -3,6 +3,8 @@ package com.squaresdevelopers.tyft.views.login.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +29,7 @@ public class LoginSignUpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_login_sign_up, container, false);
-
+        onback(view);
         initViews();
         return view;
     }
@@ -38,7 +40,7 @@ public class LoginSignUpFragment extends Fragment {
         btnUserOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GeneralUtils.putStringValueInEditor(getActivity(),"type","user1");
+                GeneralUtils.putStringValueInEditor(getActivity(),"type","Vendor");
                 startActivity(new Intent(getActivity(), LoginActivity.class));
             }
         });
@@ -46,10 +48,28 @@ public class LoginSignUpFragment extends Fragment {
         btnUserTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GeneralUtils.putStringValueInEditor(getActivity(),"type","user2");
+                GeneralUtils.putStringValueInEditor(getActivity(),"type","Tyft");
                 startActivity(new Intent(getActivity(), LoginActivity.class));
 
             }
         });
+    }
+
+    private void onback(View view) {
+
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                    getActivity().finishAffinity();
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 }

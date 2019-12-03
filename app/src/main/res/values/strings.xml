@@ -21,7 +21,7 @@
     <string name="back">Back</string>
     <string name="text">TextField</string>
     <string name="see">your location</string>
-    <string name="truck_owner">truck owners</string>
+    <string name="truck_owner">Vendor</string>
     <string name="tyft">TYFT</string>
     <string name="name_of_truck">Name of your truck</string>
     <string name="schedule">Set your timing</string>
