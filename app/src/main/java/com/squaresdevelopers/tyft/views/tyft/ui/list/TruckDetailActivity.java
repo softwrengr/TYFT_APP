@@ -120,7 +120,7 @@ public class TruckDetailActivity extends AppCompatActivity implements OnMapReady
         googleMap.addMarker(new MarkerOptions().position(truckLatLng)
                 .title("Truck Location"))
                 .setIcon(truckIcon);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(truckLatLng, 10);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(truckLatLng, 15);
         googleMap.animateCamera(cameraUpdate);
 
         Polyline line = googleMap.addPolyline(new PolylineOptions()

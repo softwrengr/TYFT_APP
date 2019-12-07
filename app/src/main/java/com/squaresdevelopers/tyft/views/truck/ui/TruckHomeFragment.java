@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -32,6 +33,9 @@ import com.squaresdevelopers.tyft.utilities.LocaleUtilities;
 import com.squaresdevelopers.tyft.viewModels.SellerViewModel;
 import com.squaresdevelopers.tyft.views.login.LoginActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -42,7 +46,11 @@ public class TruckHomeFragment extends Fragment {
     private GetLocation getLocation;
     private SellerViewModel sellerViewModel;
     private FragmentSellerHomeBinding binding;
-    private String strLanguage;
+    private String strLanguage,strDate;
+    private int sellerID;
+    private DatabaseReference databaseReference;
+    private SimpleDateFormat currentDate;
+    private boolean checkData = true;
 
 
     @Override
@@ -51,9 +59,16 @@ public class TruckHomeFragment extends Fragment {
         LocaleUtilities.loadLocale(getActivity(),
                 GeneralUtils.getLanguage(getActivity()));
 
+        sellerID = GeneralUtils.getSellerId(getActivity());
+        checkData = GeneralUtils.checkValueInDatabase(getActivity());
+        currentDate = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date c = Calendar.getInstance().getTime();
+        strDate = currentDate.format(c);
+
         getLocation = new GetLocation();
         getLocation.getLocation(getActivity());
-        updatingLocation();
+
 
     }
 
@@ -94,7 +109,10 @@ public class TruckHomeFragment extends Fragment {
                 GeneralUtils.putStringValueInEditor(getActivity(),
                         "user2_email", sellerProfileDataModels.get(0).getEmail());
                 GeneralUtils.putStringValueInEditor(getActivity(),
-                        "user2_text", sellerProfileDataModels.get(0).getTextField());
+                        "truck_name", sellerProfileDataModels.get(0).getTextField());
+
+                saveSellerData();
+                updatingLocation();
             }
         });
 
@@ -196,8 +214,28 @@ public class TruckHomeFragment extends Fragment {
         dialog.show();
     }
 
+    private void saveSellerData() {
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID));
+        SellerLocationModel model = new SellerLocationModel(
+                String.valueOf(sellerID),
+                strDate,
+                GeneralUtils.getStartTime(getActivity()),
+                GeneralUtils.getEndTime(getActivity()),
+                GeneralUtils.getUserLatitude(getActivity()),
+                GeneralUtils.getUserLongitude(getActivity()),
+                GeneralUtils.getUserImage1(getActivity()),
+                GeneralUtils.getUserImage2(getActivity()),
+                GeneralUtils.getTruckName(getActivity()));
+
+        databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                GeneralUtils.putBooleanValueInEditor(getActivity(),"check_value",false);
+            }
+        });
+    }
+
     private void updatingLocation() {
-        int sellerID = GeneralUtils.getSellerId(getActivity());
         HashMap<String, Object> result = new HashMap<>();
         result.put("strLatitude", GeneralUtils.getUserLatitude(getActivity()));
         result.put("strLongitude",GeneralUtils.getUserLongitude(getActivity()));

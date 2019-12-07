@@ -78,8 +78,8 @@ public class GeneralUtils {
     }
 
 
-    public static String getUser2Text(Context context){
-        return getSharedPreferences(context).getString("user2_text","");
+    public static String getTruckName(Context context){
+        return getSharedPreferences(context).getString("truck_name","");
     }
 
     public static String getUserImage1(Context context){
@@ -109,13 +109,8 @@ public class GeneralUtils {
         return getSharedPreferences(context).getString("endTime","00:00:00");
     }
 
-
-    public static boolean isLogin(Context context){
-        return getSharedPreferences(context).getBoolean("loggedIn",false);
-    }
-
-    public static boolean sellerLocation(Context context){
-        return getSharedPreferences(context).getBoolean("seller_location",false);
+    public static boolean checkValueInDatabase(Context context){
+        return getSharedPreferences(context).getBoolean("check_value",true);
     }
 
 

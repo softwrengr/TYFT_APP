@@ -51,6 +51,7 @@ import com.squaresdevelopers.tyft.utilities.GeneralUtils;
 import com.squaresdevelopers.tyft.utilities.GetLocation;
 import com.squaresdevelopers.tyft.utilities.InternetUtils;
 import com.squaresdevelopers.tyft.utilities.NetworkUtils;
+import com.squaresdevelopers.tyft.views.tyft.ui.list.TruckDetailActivity;
 
 import org.json.JSONObject;
 
@@ -78,7 +79,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     LatLng apiLatLng;
     GetLocation getLocation;
 
-    String strImageOne, strImageTwo, strName;
+    private String strImageOne, strImageTwo, strName;
+    private String id, date, startTime, endTime, lat, lng;
 
 
     @Override
@@ -149,12 +151,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                         GetSellerLocation model = postSnapshot.getValue(GetSellerLocation.class);
 
-                        String id = model.getStrID();
-                        String date = model.getDate();
-                        String startTime = model.getStartTime();
-                        String endTime = model.getEndTime();
-                        String lat = model.getStrLatitude();
-                        String lng = model.getStrLongitude();
+                         id = model.getStrID();
+                         date = model.getDate();
+                         startTime = model.getStartTime();
+                         endTime = model.getEndTime();
+                         lat = model.getStrLatitude();
+                         lng = model.getStrLongitude();
 
                         try {
                             calculateTiming(id, date, startTime, endTime, lat, lng);
@@ -254,11 +256,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapView.onPause();
     }
 
-//    @Override
-//    public void onDestroy() {
-//        super.onDestroy();
-//        mapView.onDestroy();
-//    }
 
     @Override
     public void onLowMemory() {
@@ -297,13 +294,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         btnGetDirection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
-                        Uri.parse("http://maps.google.com/maps.mytracks?saddr=" +
-                                String.valueOf(markerLatLng.latitude) + "," +
-                                String.valueOf(markerLatLng.longitude) +
-                                "&daddr=" + GeneralUtils.getUserLatitude(getActivity()) +
-                                "," + GeneralUtils.getUserLongitude(getActivity())));
-                startActivity(intent);
+                Bundle bundle = new Bundle();
+                bundle.putString("name", strName);
+                bundle.putString("image_one", strImageOne);
+                bundle.putString("image_two", strImageOne);
+                bundle.putString("date", date);
+                bundle.putString("start_time", startTime);
+                bundle.putString("end_time", endTime);
+                bundle.putString("lat", lat);
+                bundle.putString("lng", lng);
+                startActivity(new Intent(getActivity(), TruckDetailActivity.class).putExtras(bundle));
             }
         });
         dialog.show();

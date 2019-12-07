@@ -14,10 +14,13 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,6 +37,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -64,11 +68,10 @@ public class TruckTimingFragment extends Fragment {
     @BindView(R.id.tv_back)
     TextView tvBack;
 
-    private DatabaseReference databaseReference;
     private int sellerID;
     private String strDate, strStartTime, strEndTime, AM_PM;
 
-    SimpleDateFormat formatter,currentDate;
+    private SimpleDateFormat formatter,currentDate;
     private boolean check = false;
 
     @Override
@@ -110,7 +113,7 @@ public class TruckTimingFragment extends Fragment {
                 if(validate()){
                     alertDialog = AlertUtils.createProgressDialog(getActivity());
                     alertDialog.show();
-                    saveSellerTiming();
+                    updatingTruckData();
                 }
             }
         });
@@ -210,28 +213,24 @@ public class TruckTimingFragment extends Fragment {
         timePickerDialog.show();
     }
 
-    private void saveSellerTiming() {
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID));
-        SellerLocationModel model = new SellerLocationModel(
-                String.valueOf(sellerID),
-                strDate,
-                strStartTime,
-                strEndTime,
-                GeneralUtils.getUserLatitude(getActivity()),
-                GeneralUtils.getUserLongitude(getActivity()),
-                GeneralUtils.getUserImage1(getActivity()),
-                GeneralUtils.getUserImage2(getActivity()),
-                GeneralUtils.getUser2Text(getActivity()));
-
-        databaseReference.setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+    private void updatingTruckData() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("date", strDate);
+        result.put("startTime", strStartTime);
+        result.put("endTime", strEndTime);
+        result.put("strLatitude", GeneralUtils.getUserLatitude(getActivity()));
+        result.put("strLongitude",GeneralUtils.getUserLongitude(getActivity()));
+        FirebaseDatabase.getInstance().getReference().child("Seller_Location").child(String.valueOf(sellerID)).updateChildren(result).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onSuccess(Void aVoid) {
+            public void onComplete(@NonNull Task<Void> task) {
                 alertDialog.dismiss();
                 GeneralUtils.putStringValueInEditor(getActivity(),"startTime",strStartTime + " " + AM_PM);
                 GeneralUtils.putStringValueInEditor(getActivity(),"endTime",strEndTime + " " + AM_PM);
                 showSweetDialog(SweetAlertDialog.SUCCESS_TYPE,"Your Time is updated successfully");
             }
         });
+
+
     }
 
     private void showUserTime(){

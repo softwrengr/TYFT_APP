@@ -87,7 +87,7 @@ public class TruckEditProfileFragment extends Fragment {
 
     private void initViews() {
         etEmail.setText(GeneralUtils.getUser2Email(getActivity()));
-        etUsername.setText(GeneralUtils.getUser2Text(getActivity()));
+        etUsername.setText(GeneralUtils.getTruckName(getActivity()));
         Glide.with(getActivity()).load(GeneralUtils.getUserImage1(getActivity())).into(ivOne);
         Glide.with(getActivity()).load(GeneralUtils.getUserImage2(getActivity())).into(ivTwo);
 
